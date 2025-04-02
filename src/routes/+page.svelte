@@ -1,7 +1,9 @@
-<h1>Hello World!</h1>
+<svelte:head>
+  <title>My Portfolio as a Web Developer</title>
+  <meta
+    name="description"
+    content="This is my portfolio as a web developer, mainly using Svelte."
+  />
+</svelte:head>
 
-<style>
-  h1 {
-    font-size: 3rem;
-  }
-</style>
+<h1>Hello World!</h1>
