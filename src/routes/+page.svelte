@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { AboutMe, HeroSection } from '$components';
+</script>
+
 <svelte:head>
   <title>My Portfolio as a Web Developer</title>
   <meta
@@ -6,4 +10,5 @@
   />
 </svelte:head>
 
-<h1>Hello World!</h1>
+<HeroSection />
+<AboutMe />
