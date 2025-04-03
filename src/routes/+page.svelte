@@ -1,5 +1,12 @@
 <script lang="ts">
   import { AboutMe, HeroSection } from '$components';
+
+  const { data } = $props();
+
+  interface Props {
+    workExperience: SanityWorkExperience[];
+  }
+  const { workExperience }: Props = data;
 </script>
 
 <svelte:head>
@@ -11,4 +18,4 @@
 </svelte:head>
 
 <HeroSection />
-<AboutMe />
+<AboutMe {workExperience} />

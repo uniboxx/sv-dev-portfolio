@@ -23,6 +23,7 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
-    "@sveltejs/enhanced-img": "^0.4.4"
+    "@sanity/image-url": "^1.1.0",
+    "sanity": "^3.82.0"
   }
 }

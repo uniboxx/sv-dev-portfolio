@@ -1,13 +1,19 @@
 <script lang="ts">
   import { Button, ExperienceTable, SectionHeadline } from '$components';
-  import image from '$assets/about-me.jpg?enhanced';
+  import image from '$assets/about-me.webp';
   import { onclick } from '$utils/functions';
+
+  interface Props {
+    workExperience: SanityWorkExperience[];
+  }
+
+  const { workExperience }: Props = $props();
 </script>
 
 <section class="about-me mt-l">
   <SectionHeadline sectionName="about-me">About Me</SectionHeadline>
   <div class="mt-m content-container default-margin">
-    <enhanced:img class="image" src={image} alt="about-me" />
+    <img src={image} alt="about-me" loading="eager" />
     <div class="text">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni,
@@ -30,16 +36,18 @@
       <Button className="mt-m" {onclick}>Tell me about your project</Button>
     </div>
   </div>
-  <ExperienceTable />
+  <ExperienceTable {workExperience} />
 </section>
 
 <style>
-  .image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 16px;
-    filter: grayscale(1);
-    border-radius: 10px;
+  .content-container {
+    img {
+      align-self: start;
+      width: 100%;
+      margin-bottom: 16px;
+      filter: grayscale(1);
+      border-radius: 20px;
+    }
   }
 
   @media screen and (min-width: 40rem) {
@@ -48,17 +56,14 @@
       justify-content: space-between;
       align-items: stretch;
       gap: 32px;
-    }
-    picture {
-      width: 45%;
-      .image {
-        border-radius: 20px;
+      img {
+        width: 45%;
         margin-bottom: unset;
       }
-    }
-    .text {
-      width: 55%;
-      text-align: left;
+      .text {
+        width: 55%;
+        text-align: left;
+      }
     }
   }
 </style>

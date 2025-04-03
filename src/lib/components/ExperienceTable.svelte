@@ -1,14 +1,9 @@
 <script lang="ts">
-  import { workExperienceArray } from '$utils/data';
-
-  interface WorkExperience {
-    jobTitle: string;
-    company: string;
-    startDate: string;
-    endDate?: string;
+  interface Props {
+    workExperience: SanityWorkExperience[];
   }
 
-  const workExperience: WorkExperience[] = workExperienceArray;
+  const { workExperience }: Props = $props();
 </script>
 
 <section class="default-margin work-experience mt-m">
@@ -21,9 +16,9 @@
           <div class="company-and-date">
             <p>{job.company}</p>
             <p class="startDate">
-              {job.startDate}
+              {job.startDate.slice(0, 7)}
               {#if job.endDate}
-                / {job.endDate}
+                / {job.endDate.slice(0, 7)}
               {:else}
                 / present
               {/if}
