@@ -10,7 +10,7 @@ export async function load() {
   );
   console.log(rawProjects);
 
-  const projects = rawProjects.map(processProjectEntries);
+  // const projects = rawProjects.map(processProjectEntries);
 
   return { workExperience, rawProjects };
 }
