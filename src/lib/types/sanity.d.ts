@@ -10,7 +10,7 @@ type SanityWorkExperience = {
   endDate?: string;
 };
 
-type SanityProject = {
+type SanityDocument = {
   _id: string;
   _type: 'project';
   _createdAt: string;
@@ -69,12 +69,12 @@ interface RawImageContent {
   _key: string;
 }
 
-interface ProcessedProject {
+interface ProcessedEntry {
   name: string;
   company: string;
   dateAccomplished: string;
   stack: string[];
-  projectImageUrl: string;
+  entryImageUrl: string;
   slug: string;
   content: Array<ProcessedTextContent | ProcessedImageContent>;
 }

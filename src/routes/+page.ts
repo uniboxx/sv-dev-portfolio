@@ -1,20 +1,20 @@
-import sanityClient, { processProjectEntries } from '$utils/sanity';
+import sanityClient, { processEntries } from '$utils/sanity';
 
 export async function load() {
   const workExperience: SanityWorkExperience[] = await sanityClient.fetch(
     `*[_type == "devExperience"] | order(startDate desc)`
   );
 
-  const rawProjects: SanityProject[] = await sanityClient.fetch(
-    `*[_type == "project"] | order(startDate desc)`
+  const rawDatas: SanityDocument[] = await sanityClient.fetch(
+    `*[_type == "project"] | order(dateAccomplished desc)`
   );
-  // console.log(rawProjects);
-  // console.log(rawProjects[0].content);
+  // console.log(rawDatas);
+  // console.log(rawDatas[0].content);
 
-  const projects = rawProjects.map(processProjectEntries);
+  const projects = rawDatas.map(processEntries);
 
-  // console.log(rawProjects[0].image);
-  // console.log(projects[0].projectImageUrl);
+  // console.log(rawDatas[0].image);
+  // console.log(projects[0].entryImageUrl);
   // console.log(projects[0].content);
 
   return { workExperience, projects };

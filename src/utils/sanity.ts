@@ -12,24 +12,24 @@ const sanityClient = createClient(config);
 
 export default sanityClient;
 
-export function processProjectEntries(rawProject: SanityProject) {
+export function processEntries(rawData: SanityDocument) {
   //- extract url from image object
   const builder = ImageUrlBuilder(sanityClient);
-  const projectImageUrl = builder.image(rawProject.image).url();
+  const entryImageUrl = builder.image(rawData.image).url();
 
-  const processedProject: ProcessedProject = {
-    name: rawProject.name,
-    company: rawProject.company,
-    dateAccomplished: rawProject.dateAccomplished,
-    stack: rawProject.stack,
-    slug: rawProject.slug,
-    projectImageUrl,
-    content: rawProject.content.map(processProjectContent),
+  const processedEntry: ProcessedEntry = {
+    name: rawData.name,
+    company: rawData.company,
+    dateAccomplished: rawData.dateAccomplished,
+    stack: rawData.stack,
+    slug: rawData.slug,
+    entryImageUrl,
+    content: rawData.content.map(processEntryContent),
   };
-  return processedProject;
+  return processedEntry;
 }
 
-function processProjectContent(content: RawTextContent | RawImageContent) {
+function processEntryContent(content: RawTextContent | RawImageContent) {
   if (content._type === 'block') {
     //- process text content
     const processedTextContent: ProcessedTextContent = {
@@ -41,11 +41,11 @@ function processProjectContent(content: RawTextContent | RawImageContent) {
   } else {
     //- process image content
     const builder = ImageUrlBuilder(sanityClient);
-    const projectImageUrl = builder.image(content).url();
+    const entryImageUrl = builder.image(content).url();
 
     const processedImage: ProcessedImageContent = {
       type: 'image',
-      url: projectImageUrl,
+      url: entryImageUrl,
     };
 
     return processedImage;
