@@ -2,6 +2,7 @@
   import { AboutMe, HeroSection } from '$components';
 
   const { data } = $props();
+  // console.log(data);
 
   interface Props {
     workExperience: SanityWorkExperience[];
