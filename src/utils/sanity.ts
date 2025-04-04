@@ -12,18 +12,18 @@ const sanityClient = createClient(config);
 
 export default sanityClient;
 
-export function processEntries(rawData: SanityDocument) {
+export function processProjectEntries(rawData: SanityProject) {
   //- extract url from image object
   const builder = ImageUrlBuilder(sanityClient);
-  const entryImageUrl = builder.image(rawData.image).url();
+  const projectImageUrl = builder.image(rawData.image).url();
 
-  const processedEntry: ProcessedEntry = {
+  const processedEntry: ProcessedProject = {
     name: rawData.name,
     company: rawData.company,
     dateAccomplished: rawData.dateAccomplished,
     stack: rawData.stack,
     slug: rawData.slug,
-    entryImageUrl,
+    projectImageUrl,
     content: rawData.content.map(processEntryContent),
   };
   return processedEntry;
@@ -41,11 +41,11 @@ function processEntryContent(content: RawTextContent | RawImageContent) {
   } else {
     //- process image content
     const builder = ImageUrlBuilder(sanityClient);
-    const entryImageUrl = builder.image(content).url();
+    const projectImageUrl = builder.image(content).url();
 
     const processedImage: ProcessedImageContent = {
       type: 'image',
-      url: entryImageUrl,
+      url: projectImageUrl,
     };
 
     return processedImage;

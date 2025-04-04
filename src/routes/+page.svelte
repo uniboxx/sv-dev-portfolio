@@ -1,10 +1,15 @@
 <script lang="ts">
-  import { AboutMe, HeroSection, MyWorkSection } from '$components';
+  import {
+    AboutMe,
+    HeroSection,
+    MyWorkSection,
+    SkillsSection,
+  } from '$components';
 
   const { data } = $props();
   // console.log(data);
 
-  const { workExperience, projects } = data;
+  const { workExperience, projects, skills } = data;
 </script>
 
 <svelte:head>
@@ -18,3 +23,4 @@
 <HeroSection />
 <AboutMe {workExperience} />
 <MyWorkSection {projects} />
+<SkillsSection {skills} />
