@@ -6,7 +6,7 @@
   }
   const { projects }: Props = $props();
   // console.log(projects);
-  const mainProject: ProcessedProject = projects[0];
+  const mainProject = projects[0];
 </script>
 
 <section class="mt-l">

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --background: #fefefe;
-  --foreground: #212121;
-  --dark-gray: #5e5e5e;
-  --light-gray: #aeaeae;
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 10%);
+  --dark-gray: hsl(0, 0%, 40%);
+  --light-gray: hsl(0, 0%, 60%);
   @media (prefers-color-scheme: dark) {
-    --background: #212121;
-    --foreground: #fefefe;
+    --background: hsl(0, 0%, 10%);
+    --foreground: hsl(0, 0%, 100%);
   }
 }
 
