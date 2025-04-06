@@ -16,7 +16,6 @@
 
 <style>
   .hero-section {
-    padding-top: 30px;
     @media screen and (min-width: 80rem) {
       padding-top: 60px;
     }
