@@ -53,7 +53,7 @@
   }
   img {
     width: 100%;
-    max-height: 450px;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 20px;
   }
@@ -104,6 +104,12 @@
       .project {
         margin-bottom: unset;
       }
+    }
+  }
+
+  @media screen and (min-width: 80rem) {
+    img {
+      max-height: 450px;
     }
   }
 </style>
