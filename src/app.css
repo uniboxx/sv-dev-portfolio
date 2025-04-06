@@ -5,6 +5,9 @@
   --foreground: hsl(0, 0%, 10%);
   --dark-gray: hsl(0, 0%, 40%);
   --light-gray: hsl(0, 0%, 60%);
+
+  scroll-behavior: smooth;
+
   @media (prefers-color-scheme: dark) {
     --background: hsl(0, 0%, 10%);
     --foreground: hsl(0, 0%, 100%);

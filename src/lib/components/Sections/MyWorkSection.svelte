@@ -72,7 +72,9 @@
   .btn-to-article {
     border: 1px solid var(--dark-gray);
     border-radius: 40px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.4rem;
     padding: 0 18px;
     @media (prefers-color-scheme: dark) {
