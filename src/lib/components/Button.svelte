@@ -21,7 +21,8 @@
     padding: 14px 40px;
     border-radius: 10px;
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       background-color: var(--background);
       color: var(--foreground);
       border: 1px solid var(--foreground);
